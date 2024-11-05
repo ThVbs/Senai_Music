@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login ou Criar Conta</title>
+    <link rel="stylesheet" href="LOGINstyles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1>Bem-vindo</h1>
+            <form>
+                <input type="text" placeholder="Usuário" required>
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Senha" required>
+                    <span id="togglePassword" class="toggle-password">👁️</span>
+                </div>
+                <button type="submit">Entrar</button>
+                <p>Ou</p>
+                <a href="criarConta.html" class="signup-btn">Criar Conta</a>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const password = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.textContent = type === 'password' ? '👁️' : '🙈';
+        });
+    </script>
+</body>
+</html>
