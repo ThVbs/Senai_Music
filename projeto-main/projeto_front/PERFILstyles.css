@@ -51,6 +51,8 @@ body {
     transition: color 0.3s;
 }
 
+
+
 .sidebar ul li a:hover {
     color: #a200ff;
 }
