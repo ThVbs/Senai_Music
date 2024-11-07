@@ -34,6 +34,7 @@ function loadLikedSongs() {
     });
 }
 
-// Inicializa os dados na página
+
 loadPlaylists();
 loadLikedSongs();
+

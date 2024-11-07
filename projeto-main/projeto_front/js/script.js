@@ -20,3 +20,13 @@ function confirmarSenha() {
         
     }
 }
+function procuraMusicas(músicas) {
+    procurar.addEventListener("click"), () => {
+        const searchTerm = searchBar.value.toLowerCase().trim();
+
+        if (searchTerm === "") {
+            fishList.innerHTML = "<li>Digite um termo para iniciar a busca</li>";
+            return;
+        }
+    }
+}
