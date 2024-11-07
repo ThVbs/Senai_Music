@@ -13,6 +13,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
+    padding: 20px; /* Adiciona espaçamento nas laterais do site */
 }
 
 .container {
@@ -31,11 +32,12 @@ body {
 h1 {
     font-size: 28px;
     margin-bottom: 20px;
-    color: #333;
     text-transform: uppercase;
-    animation: fadeIn 1s ease-in-out;
+    color: #333;
+    animation: fadeIn 1s ease-in-out, colorChange 3s ease-in-out infinite alternate;
 }
 
+/* Animação de fade-in para o carregamento */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -45,70 +47,13 @@ h1 {
     }
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-input {
-    margin: 10px 0;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: calc(100% - 24px);
-    transition: border-color 0.3s;
-}
-
-input:focus {
-    border-color: #ff7e5f;
-    outline: none;
-    box-shadow: 0 0 5px rgba(255, 126, 95, 0.7);
-}
-
-button {
-    background-color: #ff7e5f;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin: 10px 0;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-button:hover {
-    background-color: #feb47b;
-    transform: scale(1.05);
-}
-
-.signup-btn {
-    background-color: #3498db;
-}
-
-.signup-btn:hover {
-    background-color: #2980b9;
-}
-
-p {
-    margin: 10px 0;
-    color: #666;
-}
-
-.footer {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #888;
-}
-
-
-@keyframes musicNotes {
-    0% {
-        transform: translateY(0);
+/* Animação de mudança de cor */
+@keyframes colorChange {
+    from {
+        color: #333; /* Cor preta */
     }
-    100% {
-        transform: translateY(-100vh);
+    to {
+        color: #a200ff; /* Cor roxa */
     }
 }
 
@@ -159,35 +104,7 @@ p {
     cursor: pointer;
 }
 
-button,
-.signup-btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    color: #fff;
-    background-color: #a200ff; 
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none; 
-}
 
-button:hover,
-.signup-btn:hover {
-    background-color: #a200ff; 
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    background-color: #f2f2f2;
-}
 
 .form-box {
     width: 100%;
@@ -231,20 +148,7 @@ button,
     text-decoration: none;
 }
 
-button:hover,
-.signup-btn:hover {
-    background-color: #a200ff;
-}
 
-p {
-    margin: 15px 0;
-    font-size: 14px;
-    color: #666;
-}
-
-.password-container {
-    position: relative;
-}
 
 .toggle-password {
     position: absolute;
