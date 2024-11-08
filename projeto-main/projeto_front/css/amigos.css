@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 .container {
     display: grid;
     grid-template-rows: auto auto;  /* Define duas linhas automáticas */
@@ -59,11 +58,11 @@ body {
     transition: color 0.3s;
 }
 
-
-
 .sidebar ul li a:hover {
     color: #a200ff;
 }
+
+
 
 /* Conteúdo Principal */
 .content {
@@ -82,23 +81,6 @@ body {
     margin: 0 auto;    /* Centraliza a imagem (opcional) */
     max-width: 100%;   /* Garante que a imagem seja responsiva */
 }
-
-p {
-    display: flex;
-    
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
-}
-
-/* Container de Perfil */
-.profile-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 /* Header do Perfil */
 .profile-header {
     display: flex;
@@ -112,105 +94,8 @@ p {
     gap: 20px;   
 }
 
-
-
-.profile-info h1 {
-    font-size: 28px;
-    color: #fff;
-}
-
-
-
-.profile-info p {
-    font-size: 14px;
-    color: #aaa;
-    margin-top: 4px;
-}
-
-/* Seções de Playlists e Músicas Curtidas */
-.playlists, .liked-music {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #1e1e1e;
-    border-radius: 8px;
-}
-
-.playlists h2, .liked-music h2 {
-    font-size: 24px;
-    color: #a200ff;
-    margin-bottom: 15px;
-}
-
-/* Playlists */
-.playlist-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.playlist {
-    background-color: #333;
-    padding: 10px;
-    border-radius: 8px;
-    width: calc(50% - 10px);
-    text-align: center;
-    color: #b3b3b3;
-    transition: background-color 0.3s;
-}
-
-.playlist:hover {
-    background-color: #444;
-}
-
-/* Músicas Curtidas */
-.liked-music ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.liked-music li {
-    padding: 10px;
-    border-bottom: 1px solid #333;
-    color: #b3b3b3;
-}
-
 .liked-music li:hover {
     background-color: #333;
-}
-
-
-@media (max-width: 768px) {
-    .sidebar {
-        width: 200px;
-    }
-
-    .content {
-        margin-left: 200px;
-        padding: 15px;
-    }
-
-    .profile-photo {
-        width: 60px;
-        height: 60px;
-    }
-
-    .profile-info h1 {
-        font-size: 20px;
-    }
-}
-.link-custom {
-    color: #b3b3b3;
-    text-decoration: none;
-    font-size: 16px;
-}
-.link-custom:hover{
-    color: #a200ff;
-}
-.container {
-    display: grid;
-    grid-template-rows: auto auto;  /* Define duas linhas automáticas */
-    justify-items: center;          /* Centraliza a imagem e o texto (opcional) */
-    gap: 10px;                      /* Espaço entre a imagem e o parágrafo */
 }
 
 .profile-header {
@@ -221,18 +106,32 @@ p {
 }
 
 .profile-item {
-    text-align: center;           /* Alinha os itens ao centro */
+    text-align: center;
 }
 
 .profile-photo {
-    width: 80px;                  /* Define a largura da imagem */
-    height: 80px;                 /* Define a altura da imagem */
-    border-radius: 50%;           /* Torna a imagem circular */
-    margin-bottom: 10px;          /* Espaço entre a imagem e o texto */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3.5px solid #a200ff;
 }
 
 .profile-item p {
-    font-size: 14px;              /* Tamanho do texto */
-    color: #aaa;                  /* Cor do texto */
+    font-size: 14px;
+    color: #aaa;
+    margin: 0;
+}
+
+/* Cor padrão do link */
+.profile-item a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s; /* Transição suave */
+}
+
+/* Cor do link ao passar o mouse por cima do item do perfil */
+.profile-item:hover a {
+    color: #a200ff; /* Cor ao passar o mouse */
 }
 
