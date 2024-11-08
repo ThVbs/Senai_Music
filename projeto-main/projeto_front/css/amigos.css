@@ -1,0 +1,179 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos Globais */
+body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #121212;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #1c1c1c;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    color: #a200ff;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 8px 0;
+    transition: color 0.3s;
+}
+
+
+
+.sidebar ul li a:hover {
+    color: #a200ff;
+}
+
+/* Conteúdo Principal */
+.content {
+    margin-left: 270px; /* Espaço para a sidebar */
+    padding: 20px;
+    width: calc(100% - 270px);
+}
+
+/* Container de Perfil */
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Header do Perfil */
+.profile-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+}
+
+.profile-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 2px solid #1DB954;
+}
+
+.profile-info h1 {
+    font-size: 28px;
+    color: #fff;
+}
+
+.profile-info p {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 4px;
+}
+
+/* Seções de Playlists e Músicas Curtidas */
+.playlists, .liked-music {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+}
+
+.playlists h2, .liked-music h2 {
+    font-size: 24px;
+    color: #a200ff;
+    margin-bottom: 15px;
+}
+
+/* Playlists */
+.playlist-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.playlist {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    width: calc(50% - 10px);
+    text-align: center;
+    color: #b3b3b3;
+    transition: background-color 0.3s;
+}
+
+.playlist:hover {
+    background-color: #444;
+}
+
+/* Músicas Curtidas */
+.liked-music ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.liked-music li {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    color: #b3b3b3;
+}
+
+.liked-music li:hover {
+    background-color: #333;
+}
+
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 200px;
+        padding: 15px;
+    }
+
+    .profile-photo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .profile-info h1 {
+        font-size: 20px;
+    }
+}
+.link-custom {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 16px;
+}
+.link-custom:hover{
+    color: #a200ff;
+}
