@@ -19,6 +19,8 @@ function confirmarSenha() {
         mensagem.textContent = "Senhas coincidem!";
         
     }
+
+    // Parte da requisição das musicas do front
 }
 function procuraMusicas(músicas) {
     procurar.addEventListener("click"), () => {
@@ -30,3 +32,40 @@ function procuraMusicas(músicas) {
         }
     }
 }
+async function renderMusicas() {
+    const musicList = document.getElementById("music-list");
+
+    try {
+        const response = await fetch("/api/musicas");
+        if (!response.ok) {
+            throw new Error("Erro ao carregar músicas");
+        }
+
+        const musicas = await response.json(); 
+
+        musicList.innerHTML = ""; 
+
+        musicas.forEach(musica => {
+            const musicItem = document.createElement("div");
+            musicItem.className = "music-item";
+
+            const title = document.createElement("h3");
+            title.innerText = `${musica.titulo} - ${musica.artista}`;
+
+            const album = document.createElement("p");
+            album.innerText = `Álbum: ${musica.album}`;
+
+            
+            musicItem.appendChild(title);
+            musicItem.appendChild(album);
+
+           
+            musicList.appendChild(musicItem);
+        });
+        
+    } catch (error) {
+        console.error(error.message);
+        musicList.innerHTML = "<p>Erro ao carregar a lista de músicas.</p>";
+    }
+}
+
