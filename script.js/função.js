@@ -17,7 +17,7 @@ function tocarMsc() {
         audioPlayer.play();
         playPauseBtn.textContent = "Pausar";
     } else {
-        audioPlayer.pause();
+        audioPlayer.pau
         playPauseBtn.textContent = "Play";
     }
 }
