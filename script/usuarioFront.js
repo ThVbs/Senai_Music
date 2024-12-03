@@ -1,5 +1,5 @@
-async function cadastrarUsuario(event) {
-    event.preventDefault(); // Impede o comportamento padrão do formulário
+const cadastrarUsuario = async (event) => {
+    event.preventDefault();
 
     const email = document.getElementById("email").value;
     const dataNascimento = document.getElementById("dataNascimento").value;
@@ -12,10 +12,14 @@ async function cadastrarUsuario(event) {
         return;
     }
 
-    const usuario = { email, dataNascimento, nomeCompleto, senha };
+    const usuario = {
+        nome: nomeCompleto,
+        email,
+        senha,
+    };
 
     try {
-        const resposta = await fetch("/api/registrar", {
+        const resposta = await fetch("/api/usuarios/registrar", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(usuario),
@@ -25,10 +29,10 @@ async function cadastrarUsuario(event) {
             alert("Conta criada com sucesso!");
             document.getElementById("formularioUsuario").reset();
         } else {
-            const erro = await resposta.text();
-            document.getElementById("mensagem").innerText = erro;
+            const mensagemErro = await resposta.text();
+            document.getElementById("mensagem").innerText = mensagemErro;
         }
     } catch (erro) {
         document.getElementById("mensagem").innerText = "Erro ao criar conta: " + erro.message;
     }
-}
+};

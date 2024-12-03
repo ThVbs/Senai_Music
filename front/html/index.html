@@ -33,6 +33,32 @@
             const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
             password.setAttribute('type', type);
             this.textContent = type === 'password' ? '🙈' : '🐵';
+            
+            const loginUsuario = async (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("password").value;
+
+    try {
+        const resposta = await fetch("/api/usuarios/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, senha }),
+        });
+
+        if (resposta.ok) {
+            alert("Login bem-sucedido!");
+            window.location.href = "principal.html";
+        } else {
+            const mensagemErro = await resposta.text();
+            alert(mensagemErro);
+        }
+    } catch (erro) {
+        alert("Erro ao fazer login: " + erro.message);
+    }
+};
+
         });
     </script>
 </body>
